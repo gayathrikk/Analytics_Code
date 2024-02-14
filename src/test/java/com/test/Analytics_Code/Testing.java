@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Testing {
@@ -28,11 +30,12 @@ public class Testing {
 		        driver = new RemoteWebDriver(url, dc);
 		        
 		    }
-
+		    @Parameters("URL")
 		    @Test(priority = 1)
-		    public void launch() throws AWTException, InterruptedException {
+		    public void login(@Optional("defaultURL") String URL) throws InterruptedException
+		    {
 
-		        driver.get("http://dev2mani.humanbrain.in/annotation/portal");
+		    	driver.get(URL);
 		        driver.manage().window().maximize();
 		    }
 		    @Test(priority=2)
@@ -124,7 +127,7 @@ public class Testing {
 		        // Switch to the iframe 
 		        driver.switchTo().frame(0);
 
-		        WebElement newButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@title='New Launcher (Ctrl+Shift+L)']")));
+		        WebElement newButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//jp-button[@title='New Launcher (Ctrl+Shift+L)']")));
 		        if (newButton.isEnabled() && newButton.isDisplayed()) {
 		            newButton.click();
 		            System.out.println("new option is clicked");

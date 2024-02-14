@@ -131,6 +131,7 @@ public class Code4humanity {
 
 	        // Print the value of the icon
 	        System.out.println("Icon value: " + iconValue);
+	        System.out.println("***************************Code validation done***************************");
 //		    
 //		     WebElement newButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//jp-button[@title='New Launcher (Ctrl+Shift+L)']")));
 //	        if (newButton.isEnabled() && newButton.isDisplayed()) {

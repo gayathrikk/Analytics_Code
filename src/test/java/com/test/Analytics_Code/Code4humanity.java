@@ -31,7 +31,7 @@ public class Code4humanity {
 	 @Test(priority=1)
 	 public void launch() throws InterruptedException
 	 {
-		 driver.get("http://code4humanity.humanbrain.in/annotation/analytics/home");
+		 driver.get("https://code4humanity.humanbrain.in/viewer/annotation/analytics/home");
 		 driver.manage().window().maximize();
 		 Thread.sleep(3000);
 	 }
